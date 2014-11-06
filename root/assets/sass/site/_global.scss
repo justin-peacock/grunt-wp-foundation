@@ -1,0 +1,47 @@
+/*
+   Global
+   ========================================================================== */
+.container {
+    @include grid-row;
+    padding-left: $column-gutter / 2;
+    padding-right: $column-gutter / 2;
+}
+
+.site-content {
+    @include grid-row;
+    @include wordwrap;
+    .content-area {
+        @extend .medium-8;
+        @extend .columns;
+    }
+    .site-sidebar {
+        @extend .medium-4;
+        @extend .columns;
+    }
+    .full-width {
+        @extend .medium-12;
+    }
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+figure,
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input[type="submit"] {
+    @include button($padding: $button-sml, $radius: true);
+}
+
+@media screen and (max-width: 782px) {
+    #wpadminbar {
+        position: fixed;
+    }
+}
