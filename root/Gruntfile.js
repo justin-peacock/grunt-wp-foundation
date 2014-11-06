@@ -202,7 +202,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          'lib/scripts.php': 'assets/{css,js}/{main,scripts}.min.{css,js}'
+          'inc/scripts.php': 'assets/{css,js}/{main,scripts}.min.{css,js}'
         }
       }
     },
