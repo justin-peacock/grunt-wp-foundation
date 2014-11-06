@@ -20,7 +20,7 @@
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
-  var {%= title %} = {
+  var {%= js_safe_name_caps %} = {
     // All pages
     common: {
       init: function() {
@@ -44,7 +44,7 @@
   // Add additional events for more control over timing e.g. a finalize event
   var UTIL = {
     fire: function(func, funcname, args) {
-      var namespace = {%= title %};
+      var namespace = {%= js_safe_name_caps %};
       funcname = (funcname === undefined) ? 'init' : funcname;
       if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
         namespace[func][funcname](args);
