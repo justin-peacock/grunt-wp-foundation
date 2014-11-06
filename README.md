@@ -12,13 +12,13 @@ Once grunt-init is installed, place this template in your `~/.grunt-init/` direc
 ### Linux/Mac Users
 
 ```
-git clone https://github.com/mrdink/grunt-wp-foundation.git ~/.grunt-init/wp-foundation
+git clone git@github.com:mrdink/grunt-wp-foundation.git ~/.grunt-init/wp-foundation
 ```
 
 ### Windows Users
 
 ```
-git clone https://github.com/mrdink/grunt-wp-foundation.git %USERPROFILE%/.grunt-init/wp-foundation
+git clone git@github.com:mrdink/grunt-wp-foundation.git %USERPROFILE%/.grunt-init/wp-foundation
 ```
 
 ## Usage
@@ -37,33 +37,6 @@ Install the NPM modules required to actually process your newly-created project 
 npm install
 ```
 
-## Scaffold
+## Credit
 
-After running the init command above, you will be presented with a standard directory structure similar to:
-
-    /theme
-    .. /assets
-    .. .. /css
-    .. .. .. /src
-    .. .. .. /sass
-    .. .. .. /less
-    .. .. /js
-    .. .. .. /src
-    .. /images
-    .. .. /src
-    .. /includes
-    .. /languages
-    .. .. theme.pot
-    .. .gitignore
-    .. Gruntfile.js
-    .. footer.php
-    .. functions.php
-    .. header.php
-    .. humans.txt
-    .. index.php
-    .. screenshot.png
-    .. style.css
-
-### Images
-
-The `/img/src` directory exists only to allow you to keep track of source files (like PSDs or separate images that have been merged into sprites).  This helps keep source files under version control, and allows you to bundle them with the distribution of your new GPL plugin.
+Forked from [grunt-wp-theme][]
