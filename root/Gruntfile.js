@@ -50,8 +50,7 @@ module.exports = function(grunt) {
         "undef": true,
         "globals": {
           "jQuery": true,
-          "alert": true,
-          "firstItemClick": true
+          "alert": true
         }
       },
       all: [
