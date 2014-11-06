@@ -16,6 +16,7 @@ ${%= prefix %}_includes = array(
 	'inc/setup.php',
 	'inc/scripts.php',
 	'inc/navigation.php',
+	'inc/sidebars.php',
 	'inc/widgets.php',
 	'inc/template-tags.php',
 	'inc/extras.php',
