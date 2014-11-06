@@ -22,14 +22,21 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '{%= prefix %}' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
+	<header id="masthead" class="site-header contain-to-grid" role="banner">
+		<nav id="site-navigation" class="main-navigation top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+		    <li class="name">
+		      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		    </li>
+		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		  </ul><!-- .title-area -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		  <section class="top-bar-section">
+				<?php if ( function_exists( '{%= prefix %}_build_topbar') ) { ?>
+					<?php {%= prefix %}_build_topbar(); ?>
+				<?php } ?>
+			</section><!-- .top-bar-section -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

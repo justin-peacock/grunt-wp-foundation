@@ -35,10 +35,7 @@
     home: {
       init: function() {
         // JavaScript to be fired on the home page
-        $(document).ready(function() {
-          // orbit handler
-          $('ul.site-slider').removeClass('hide');
-        });
+
       }
     }
   };
