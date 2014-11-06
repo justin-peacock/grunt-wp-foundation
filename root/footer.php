@@ -8,8 +8,6 @@
  */
 ?>
 
-	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container site-info">
 			<span class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></span>

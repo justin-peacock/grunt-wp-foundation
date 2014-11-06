@@ -10,6 +10,9 @@
 .site-content {
     @include grid-row;
     @include wordwrap;
+    &.fluid {
+        max-width: 100%;
+    }
     .content-area {
         @extend .medium-8;
         @extend .columns;
