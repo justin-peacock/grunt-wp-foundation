@@ -10,9 +10,6 @@
 .site-content {
     @include grid-row;
     @include wordwrap;
-    &.fluid {
-        max-width: 100%;
-    }
     .content-area {
         @extend .medium-8;
         @extend .columns;
@@ -24,6 +21,10 @@
     .full-width {
         @extend .medium-12;
     }
+}
+
+.fluid {
+    max-width: 100%;
 }
 
 /* Make sure embeds and iframes fit their containers */
