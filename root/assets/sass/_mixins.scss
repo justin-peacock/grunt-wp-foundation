@@ -1,0 +1,43 @@
+// Center block
+@mixin center-block($mt: 0, $mb: 0) {
+    display: block;
+    margin: $mt auto $mb;
+}
+
+@mixin fontawesome {
+    display: inline-block;
+    font-family: "FontAwesome";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin wordwrap {
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin widget-lists {
+    ul, ol {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        padding: 5px 0;
+    }
+    .children li:last-child {
+        padding-bottom: 0;
+    }
+    li > ul, li > ol {
+        margin-left: 20px;
+    }
+    select {
+        max-width: 100%;
+    }
+}

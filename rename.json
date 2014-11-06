@@ -1,0 +1,5 @@
+{
+	"theme.php": "{%= js_safe_name %}.php",
+	"assets/css/src/theme.css": "assets/css/src/{%= js_safe_name %}.css",
+	"languages/theme.pot": "languages/{%= prefix %}.pot"
+}

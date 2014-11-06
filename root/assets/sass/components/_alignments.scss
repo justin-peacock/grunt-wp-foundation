@@ -1,0 +1,20 @@
+.alignleft {
+    float: left;
+    margin: rem-calc(0 15 30 0);
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto rem-calc(30) auto;
+}
+
+.alignright {
+    float: right;
+    margin: rem-calc(0 0 30 15);
+}
+
+.alignnone {
+    float: none;
+    display: block;
+    margin: 0;
+}
