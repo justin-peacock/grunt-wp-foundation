@@ -39,4 +39,4 @@ npm install
 
 ## Credit
 
-Forked from [grunt-wp-theme][]
+Forked from [grunt-wp-theme](https://github.com/10up/grunt-wp-theme/) by [10up](http://10up.com/).
