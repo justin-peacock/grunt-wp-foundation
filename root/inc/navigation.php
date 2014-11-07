@@ -13,13 +13,13 @@ function {%= prefix %}_build_topbar() {
 	if (has_nav_menu( 'primary' ) ) {
 		echo wp_nav_menu( array(
 			'theme_location' => 'primary',
-			'menu_class' => 'left',
+			'menu_class' => 'right',
 			'walker' => new {%= prefix %}_topbar_walker(),
 			'container' => ''
 		));
 	}
 	else {
-		echo '<ul class="left">';
+		echo '<ul class="right">';
 			echo '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
 		echo '</ul>';
 	}
