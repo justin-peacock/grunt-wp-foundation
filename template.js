@@ -49,6 +49,7 @@ exports.template = function( grunt, init, done ) {
 			"grunt-autoprefixer": "~1.0.1",
 			"grunt-contrib-cssmin": "^0.10.0",
 			"grunt-pixrem": "~0.1.1",
+			"grunt-contrib-imagemin": "^0.9.1",
 			"grunt-contrib-copy": "^0.7.0",
 			"grunt-contrib-clean": "^0.6.0",
 			"grunt-contrib-concat": "~0.5.0",
