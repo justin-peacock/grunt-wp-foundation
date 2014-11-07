@@ -216,6 +216,17 @@ module.exports = function(grunt) {
         ]
       }
     },
+    imagemin: {
+      dist: {
+        files: [{
+          progressive: true,
+          expand: true,
+          cwd: 'assets/img/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'assets/img/'
+        }]
+      }
+    },
     watch: {
       sass: {
         files: [
@@ -322,6 +333,7 @@ module.exports = function(grunt) {
     'uglify',
     'modernizr',
     'version',
+    'imagemin',
     'makepot',
     'notify:build'
   ]);
