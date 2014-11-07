@@ -28,16 +28,31 @@ function {%= prefix %}_build_topbar() {
 /**
 * Navigation Menu Adjustments
 */
+/**
+* Navigation Menu Adjustments
+*/
 class {%= prefix %}_topbar_walker extends Walker_Nav_Menu {
-	function start_lvl(&$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"dropdown\">\n";
-	}
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
-		$id_field = $this->db_fields['id'];
-		if ( !empty( $children_elements[ $element->$id_field ] ) ) {
-			$element->classes[] = 'has-dropdown';
-		}
-		Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-	}
+  function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+    $element->has_children = !empty( $children_elements[$element->ID] );
+    $element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+    $element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';
+
+    parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+  }
+
+  function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+    $item_html = '';
+    parent::start_el( $item_html, $object, $depth, $args );
+
+    $classes = empty( $object->classes ) ? array() : (array) $object->classes;
+
+    if( in_array('label', $classes) ) {
+      $output .= '<li class="divider"></li>';
+      $item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
+    }
+    $output .= $item_html;
+  }
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $output .= "\n<ul class=\"sub-menu dropdown\">\n";
+  }
 }
