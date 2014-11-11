@@ -41,6 +41,18 @@ function theme_options_do_page() {
 
 				<?php
 				/**
+				 * Fixed Navigation
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Navigation', '{%= prefix %}' ); ?></th>
+					<td>
+						<input id="{%= prefix %}_theme_options[fixed_nav]" name="{%= prefix %}_theme_options[fixed_nav]" type="checkbox" value="1" <?php checked( '1', $options['fixed_nav'] ); ?> />
+						<label class="description" for="{%= prefix %}_theme_options[fixed_nav]"><?php _e( 'Fixed', '{%= prefix %}' ); ?></label>
+					</td>
+				</tr>
+
+				<?php
+				/**
 				 * Twitter URL
 				 */
 				?>

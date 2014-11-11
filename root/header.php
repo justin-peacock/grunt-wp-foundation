@@ -22,7 +22,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '{%= prefix %}' ); ?></a>
 
-	<header id="masthead" class="site-header contain-to-grid" role="banner">
+	<header id="masthead" class="site-header contain-to-grid<?php {%= prefix %}_fixed_navigation(); ?>" role="banner">
 		<nav id="site-navigation" class="main-navigation top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 		    <li class="name">
