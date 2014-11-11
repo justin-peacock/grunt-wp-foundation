@@ -185,7 +185,7 @@ class {%= prefix %}_widget_social_links extends WP_Widget {
 	function __construct() {
 		$widget_ops = array('description' => __('Display social icon links set in the Options.', '{%= prefix %}_widget_social_links'));
 		$control_ops = array('width' => 400, 'height' => 300);
-		parent::WP_Widget(false, $name = __('Villa Rica - Social Links', '{%= prefix %}_widget_social_links'), $widget_ops, $control_ops );
+		parent::WP_Widget(false, $name = __('{%= title %} - Social Links', '{%= prefix %}_widget_social_links'), $widget_ops, $control_ops );
 	}
 
 	// widget form creation
