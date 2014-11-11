@@ -175,3 +175,63 @@ class {%= prefix %}_widget_button extends WP_Widget {
 
 // register widget
 add_action('widgets_init', create_function('', 'return register_widget("{%= prefix %}_widget_button");'));
+
+/**
+ * Connections Widget
+ */
+class {%= prefix %}_widget_social_links extends WP_Widget {
+
+	// constructor
+	function __construct() {
+		$widget_ops = array('description' => __('Display social icon links set in the Options.', '{%= prefix %}_widget_social_links'));
+		$control_ops = array('width' => 400, 'height' => 300);
+		parent::WP_Widget(false, $name = __('{%= title %} - Social Links', '{%= prefix %}_widget_social_links'), $widget_ops, $control_ops );
+	}
+
+	// widget form creation
+	function form($instance) {
+
+	// Check values
+	if( $instance) {
+		 $title = esc_attr($instance['title']);
+	} else {
+		 $title = '';
+	}
+	?>
+
+	<p>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', '{%= prefix %}_widget_link'); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+	</p>
+	<?php
+	}
+
+	// update widget
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		// Fields
+		$instance['title'] = strip_tags($new_instance['title']);
+	return $instance;
+	}
+
+	// display widget
+	function widget($args, $instance) {
+		extract( $args );
+		// these are the widget options
+		$title = apply_filters('widget_title', $instance['title']);
+
+		echo $before_widget;
+
+		// Check if title is set
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
+
+		{%= prefix %}_social_links();
+
+		echo $after_widget;
+	}
+}
+
+// register widget
+add_action('widgets_init', create_function('', 'return register_widget("{%= prefix %}_widget_social_links");'));
