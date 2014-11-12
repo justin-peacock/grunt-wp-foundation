@@ -1,2 +1,11 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 node_modules
 bower_components
+assets/css/main.css.map
+assets/css/*main*.css
+assets/css/rem-fallback.css
+assets/css/*ionicons*.css
+assets/js/*scripts*.js
+assets/js/vendor/modernizr.min.js
+assets/manifest.json
