@@ -135,8 +135,8 @@ function theme_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Pinterest', '{%= prefix %}' ); ?></th>
 					<td>
-						<input id="{%= prefix %}_theme_options[pinterest]" class="regular-text" type="text" name="{%= prefix %}_theme_options[pinterest]" value="<?php esc_attr_e( $options['vimeo'] ); ?>" />
-						<label class="description" for="{%= prefix %}_theme_options[vimeo]"><?php _e( 'http://pinterest.com/username', '{%= prefix %}' ); ?></label>
+						<input id="{%= prefix %}_theme_options[pinterest]" class="regular-text" type="text" name="{%= prefix %}_theme_options[pinterest]" value="<?php esc_attr_e( $options['pinterest'] ); ?>" />
+						<label class="description" for="{%= prefix %}_theme_options[pinterest]"><?php _e( 'http://pinterest.com/username', '{%= prefix %}' ); ?></label>
 					</td>
 				</tr>
 			</table>
