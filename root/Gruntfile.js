@@ -76,6 +76,9 @@ module.exports = function(grunt) {
           'assets/css/main.css': [
             'assets/sass/main.scss'
           ],
+          'editor-style.css': [
+            'assets/sass/editor-style.scss'
+          ],
           'assets/css/font-awesome.css': [
             'bower_components/fontawesome/scss/font-awesome.scss'
           ]

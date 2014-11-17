@@ -17,6 +17,8 @@ if ( ! function_exists( '{%= prefix %}_setup' ) ) :
  */
 function {%= prefix %}_setup() {
 
+	add_editor_style();
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.

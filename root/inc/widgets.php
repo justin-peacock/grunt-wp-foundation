@@ -124,7 +124,7 @@ class {%= prefix %}_widget_button extends WP_Widget {
 	?>
 
 	<p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', '{%= prefix %}_widget_link'); ?></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', '{%= prefix %}_widget_button'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
 

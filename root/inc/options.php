@@ -27,7 +27,7 @@ function theme_options_do_page() {
 
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Options', '{%= prefix %}' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Options', '{%= prefix %}' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', '{%= prefix %}' ); ?></strong></p></div>
@@ -38,6 +38,18 @@ function theme_options_do_page() {
 			<?php $options = get_option( '{%= prefix %}_theme_options' ); ?>
 
 			<table class="form-table">
+
+				<?php
+				/**
+				 * Fixed Navigation
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Navigation', '{%= prefix %}' ); ?></th>
+					<td>
+						<input id="{%= prefix %}_theme_options[fixed_nav]" name="{%= prefix %}_theme_options[fixed_nav]" type="checkbox" value="1" <?php checked( '1', $options['fixed_nav'] ); ?> />
+						<label class="description" for="{%= prefix %}_theme_options[fixed_nav]"><?php _e( 'Fixed', '{%= prefix %}' ); ?></label>
+					</td>
+				</tr>
 
 				<?php
 				/**
@@ -123,8 +135,8 @@ function theme_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Pinterest', '{%= prefix %}' ); ?></th>
 					<td>
-						<input id="{%= prefix %}_theme_options[pinterest]" class="regular-text" type="text" name="{%= prefix %}_theme_options[pinterest]" value="<?php esc_attr_e( $options['vimeo'] ); ?>" />
-						<label class="description" for="{%= prefix %}_theme_options[vimeo]"><?php _e( 'http://pinterest.com/username', '{%= prefix %}' ); ?></label>
+						<input id="{%= prefix %}_theme_options[pinterest]" class="regular-text" type="text" name="{%= prefix %}_theme_options[pinterest]" value="<?php esc_attr_e( $options['pinterest'] ); ?>" />
+						<label class="description" for="{%= prefix %}_theme_options[pinterest]"><?php _e( 'http://pinterest.com/username', '{%= prefix %}' ); ?></label>
 					</td>
 				</tr>
 			</table>
