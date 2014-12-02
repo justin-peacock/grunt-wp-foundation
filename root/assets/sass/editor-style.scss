@@ -7,9 +7,177 @@
 // http://bourbon.io/docs/
 @import "bourbon";
 
-@import "foundation/components/buttons";
-@import "foundation/components/tables";
-@import "foundation/components/thumbs";
-@import "foundation/components/type";
 @import "components/alignments";
 @import "components/media";
+
+/* Default Link Styles */
+a {
+    color: $anchor-font-color;
+    text-decoration: $anchor-text-decoration;
+    line-height: inherit;
+    &:hover,
+    &:focus {
+        color: $anchor-font-color-hover;
+    }
+    img {
+        border: none;
+    }
+}
+
+/* Default paragraph styles */
+p {
+    font-family: $paragraph-font-family;
+    font-weight: $paragraph-font-weight;
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    margin-bottom: $paragraph-margin-bottom;
+    text-rendering: $paragraph-text-rendering;
+}
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-style: $header-font-style;
+    color: $header-font-color;
+    text-rendering: $header-text-rendering;
+    margin-top: $header-top-margin;
+    margin-bottom: $header-bottom-margin;
+    line-height: $header-line-height;
+    small {
+        font-size: $small-font-size;
+        color: $small-font-color;
+        line-height: 0;
+    }
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+h6 {
+    font-size: $h6-font-size;
+}
+
+/* Lists */
+ul,
+ol,
+dl {
+    font-size: $list-font-size;
+    line-height: $list-line-height;
+    margin-bottom: $list-margin-bottom;
+    list-style-position: $list-style-position;
+    font-family: $list-font-family;
+}
+
+ul {
+    margin-#{$default-float}: $list-side-margin;
+    &.no-bullet {
+        margin-#{$default-float}: $list-side-margin-no-bullet;
+        li {
+            ul,
+            ol {
+                margin-#{$default-float}: $list-nested-margin;
+                margin-bottom: 0;
+                list-style: none;
+            }
+        }
+    }
+}
+
+/* Unordered Lists */
+ul {
+    li {
+        ul,
+        ol {
+            margin-#{$default-float}: $list-nested-margin;
+            margin-bottom: 0;
+        }
+    }
+    &.square,
+    &.circle,
+    &.disc {
+        li ul {
+            list-style: inherit;
+        }
+    }
+    &.square {
+        list-style-type: square;
+        margin-#{$default-float}: $list-side-margin;
+    }
+    &.circle {
+        list-style-type: circle;
+        margin-#{$default-float}: $list-side-margin;
+    }
+    &.disc {
+        list-style-type: disc;
+        margin-#{$default-float}: $list-side-margin;
+    }
+    &.no-bullet {
+        list-style: none;
+    }
+}
+
+/* Ordered Lists */
+ol {
+    margin-#{$default-float}: $list-ordered-side-margin;
+    li {
+        ul,
+        ol {
+            margin-#{$default-float}: $list-nested-margin;
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Definition Lists */
+dl {
+    dt {
+        margin-bottom: $definition-list-header-margin-bottom;
+        font-weight: $definition-list-header-weight;
+    }
+    dd {
+        margin-bottom: $definition-list-margin-bottom;
+    }
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 0 0 $paragraph-margin-bottom;
+    padding: $blockquote-padding;
+    border-#{$default-float}: $blockquote-border;
+    cite {
+        display: block;
+        font-size: $blockquote-cite-font-size;
+        color: $blockquote-cite-font-color;
+        &:before {
+            content: "\2014 \0020";
+        }
+        a,
+        a:visited {
+            color: $blockquote-cite-link-color;
+        }
+    }
+}
+
+blockquote,
+blockquote p {
+    line-height: $paragraph-line-height;
+    color: $blockquote-font-color;
+}
