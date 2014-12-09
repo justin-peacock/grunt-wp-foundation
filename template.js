@@ -24,11 +24,11 @@ exports.warnOn = '*';
 exports.template = function( grunt, init, done ) {
 	init.process( {}, [
 		// Prompt for these values.
-		init.prompt( 'title', 'WP Theme' ),
+		init.prompt( 'title', 'Foundation WP Theme' ),
 		{
 			name   : 'prefix',
 			message: 'PHP function prefix (alpha and underscore characters only)',
-			default: 'wptheme'
+			default: 'foundation'
 		},
 		init.prompt( 'description', 'The best WordPress theme ever made!' ),
 		init.prompt( 'homepage', 'http://wordpress.org/themes' ),
@@ -40,27 +40,27 @@ exports.template = function( grunt, init, done ) {
 		props.version = '0.1.0';
 		props.devDependencies = {
 			"grunt": "^0.4.5",
-			"load-grunt-tasks": "^1.0.0",
-			"node-sass": "^1.2.1",
-			"time-grunt": "^1.0.0",
-			"grunt-sass": "^0.16.1",
+			"grunt-sass": "^0.17.0",
 			"grunt-csscomb": "^3.0.0",
-			"grunt-cssjanus": "^0.2.2",
-			"grunt-autoprefixer": "~1.0.1",
+			"grunt-autoprefixer": "^2.0.0",
 			"grunt-contrib-cssmin": "^0.10.0",
+			"grunt-cssjanus": "^0.2.2",
 			"grunt-pixrem": "~0.1.1",
-			"grunt-contrib-imagemin": "^0.9.1",
-			"grunt-contrib-copy": "^0.7.0",
 			"grunt-contrib-clean": "^0.6.0",
 			"grunt-contrib-concat": "~0.5.0",
+			"grunt-contrib-copy": "^0.7.0",
+			"grunt-contrib-imagemin": "^0.9.1",
 			"grunt-contrib-jshint": "~0.10.0",
 			"grunt-contrib-uglify": "^0.6.0",
 			"grunt-contrib-watch": "~0.6.1",
 			"grunt-dev-update": "^1.0.1",
 			"grunt-modernizr": "^0.6.0",
-			"grunt-notify": "^0.3.1",
+			"grunt-notify": "^0.4.1",
+			"grunt-wp-assets": "~0.2.6",
 			"grunt-wp-i18n": "^0.4.9",
-			"grunt-wp-assets": "~0.2.6"
+			"load-grunt-tasks": "^1.0.0",
+			"node-sass": "^1.2.1",
+			"time-grunt": "^1.0.0"
 		};
 
 		// Sanitize names where we need to for PHP/JS

@@ -114,11 +114,6 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
       },
       dev: {
-        options: {
-          map: {
-            prev: 'assets/css/'
-          }
-        },
         src: 'assets/css/main.css'
       }
     },
@@ -136,7 +131,7 @@ module.exports = function(grunt) {
         replace: true
       },
       dev: {
-        src: 'assets/css/main.css',
+        src: ['assets/css/main.css'],
         dest: 'assets/css/rem-fallback.css'
       }
     },
