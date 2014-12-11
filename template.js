@@ -40,27 +40,28 @@ exports.template = function( grunt, init, done ) {
 		props.version = '0.1.0';
 		props.devDependencies = {
 			"grunt": "^0.4.5",
-			"grunt-sass": "^0.17.0",
-			"grunt-csscomb": "^3.0.0",
 			"grunt-autoprefixer": "^2.0.0",
-			"grunt-contrib-cssmin": "^0.10.0",
-			"grunt-cssjanus": "^0.2.2",
-			"grunt-pixrem": "~0.1.1",
 			"grunt-contrib-clean": "^0.6.0",
 			"grunt-contrib-concat": "~0.5.0",
 			"grunt-contrib-copy": "^0.7.0",
+			"grunt-contrib-cssmin": "^0.10.0",
 			"grunt-contrib-imagemin": "^0.9.1",
 			"grunt-contrib-jshint": "~0.10.0",
 			"grunt-contrib-uglify": "^0.6.0",
 			"grunt-contrib-watch": "~0.6.1",
-			"grunt-dev-update": "^1.0.1",
+			"grunt-csscomb": "^3.0.0",
+			"grunt-cssjanus": "^0.2.2",
 			"grunt-modernizr": "^0.6.0",
 			"grunt-notify": "^0.4.1",
+			"grunt-pixrem": "~0.1.1",
+			"grunt-sass": "^0.17.0",
+			"grunt-version-check": "^0.2.1",
 			"grunt-wp-assets": "~0.2.6",
 			"grunt-wp-i18n": "^0.4.9",
 			"load-grunt-tasks": "^1.0.0",
 			"node-sass": "^1.2.1",
-			"time-grunt": "^1.0.0"
+			"time-grunt": "^1.0.0",
+			"versioncheck": "^2.1.1"
 		};
 
 		// Sanitize names where we need to for PHP/JS
