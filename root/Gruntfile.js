@@ -282,7 +282,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           title: 'Grunt, grunt!',
-          message: 'Development proccessed without errors.'
+          message: 'Development processed without errors.'
         }
       },
       build: {
