@@ -260,18 +260,10 @@ module.exports = function(grunt) {
         ]
       }
     },
-    devUpdate: {
-      main: {
-        options: {
-          updateType: 'report',
-          reportUpdated: false,
-          semver: true,
-          packages: {
-            devDependencies: true,
-            dependencies: false
-          },
-          packageJson: null
-        }
+    versioncheck: {
+      options: {
+        skip: ["semver", "npm", "lodash"],
+        hideUpToDate: false
       }
     },
     notify: {
