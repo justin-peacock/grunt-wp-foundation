@@ -17,6 +17,7 @@
     .site-sidebar {
         @extend .medium-4;
         @extend .columns;
+        @extend .hide-for-print;
     }
     .full-width {
         @extend .medium-12;
