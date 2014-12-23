@@ -1,0 +1,20 @@
+/*
+   Navigation
+   ========================================================================== */
+.site-main {
+    .comment-navigation, .paging-navigation, .post-navigation {
+        margin: rem-calc(0 0 30);
+        overflow: hidden;
+    }
+}
+
+.comment-navigation .nav-previous, .paging-navigation .nav-previous, .post-navigation .nav-previous {
+    float: left;
+    width: 50%;
+}
+
+.comment-navigation .nav-next, .paging-navigation .nav-next, .post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
