@@ -20,7 +20,6 @@ function {%= prefix %}_scripts() {
 			'css'       => '/assets/css/main.css',
 			'rtl'       => '/assets/css/main-rtl.css',
 			'child'     => '/style.css',
-			'fonts'     => '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
 			'icons'     => '/assets/css/font-awesome.css',
 			'js'        => '/assets/js/scripts.js',
 			'modernizr' => '/bower_components/modernizr/modernizr.js',
@@ -31,34 +30,33 @@ function {%= prefix %}_scripts() {
 		$assets     = json_decode($get_assets, true);
 		$assets     = array(
 			'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
-			'rtl'       => '/assets/css/main-rtl.css?' . $assets['assets/css/main.min.css']['hash'],
-			'child'     => '/style.css?' . $assets['assets/css/main.min.css']['hash'],
-			'fonts'     => '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700?' . $assets['assets/css/main.min.css']['hash'],
-			'icons'     => '/assets/css/font-awesome.min.css?' . $assets['assets/css/main.min.css']['hash'],
+			'rtl'       => '/assets/css/main-rtl.css?' . $assets['assets/css/main-rtl.css']['hash'],
+			'child'     => '/style.css?',
+			'icons'     => '/assets/css/font-awesome.min.css?' . $assets['assets/css/font-awesome.min.css']['hash'],
 			'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
 			'modernizr' => '/assets/js/vendor/modernizr.min.js'
 		);
 	}
 
-	wp_enqueue_style('{%= prefix %}_css', get_template_directory_uri() . $assets['css'], false, null);
-	wp_enqueue_style('{%= prefix %}_fonts', $assets['fonts'], false, null);
-	wp_enqueue_style('{%= prefix %}_icons', get_template_directory_uri() . $assets['icons'], false, null);
+	wp_enqueue_style( '{%= prefix %}-css', get_template_directory_uri() . $assets['css'], false, null);
+	wp_enqueue_style( '{%= prefix %}-fonts', {%= prefix %}_fonts_url(), array(), null );
+	wp_enqueue_style( '{%= prefix %}-icons', get_template_directory_uri() . $assets['icons'], false, null);
 
 	if ( is_child_theme() ){
-		wp_enqueue_style('{%= prefix %}_child', get_stylesheet_directory_uri() . $assets['child'], false, null);
+		wp_enqueue_style( '{%= prefix %}-child', get_stylesheet_directory_uri() . $assets['child'], false, null);
 	}
 
 	if ( is_rtl() ) {
-		wp_enqueue_style('{%= prefix %}_rtl', get_template_directory_uri() . $assets['rtl'], false, null);
+		wp_enqueue_style( '{%= prefix %}-rtl', get_template_directory_uri() . $assets['rtl'], false, null);
 	}
 
 	if ( is_single() && comments_open() && get_option('thread_comments') ) {
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('{%= prefix %}_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
+	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( '{%= prefix %}-js', get_template_directory_uri() . $assets['js'], array(), null, true);
 
 	if (WP_ENV === 'development') {
 		wp_enqueue_script( 'livereload', $assets['livereload'], '', false, true );
@@ -70,11 +68,11 @@ add_action('wp_enqueue_scripts', '{%= prefix %}_scripts', 100);
  * Add conditional IE styles and scripts
  */
 function {%= prefix %}_ie_scripts() {
-		?>
-		<!--[if lt IE 9]>
-				<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ie.js" type="text/javascript"></script>
-				<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/rem-fallback.css">
-		<![endif]-->
-		<?php
+	?>
+	<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ie.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/rem-fallback.css">
+	<![endif]-->
+	<?php
 }
 add_action( 'wp_head', '{%= prefix %}_ie_scripts', 8 );

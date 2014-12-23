@@ -13,6 +13,7 @@
  *
  */
 ${%= prefix %}_includes = array(
+	'inc/fonts.php',
 	'inc/setup.php',
 	'inc/options.php',
 	'inc/scripts.php',

@@ -7,7 +7,7 @@
  * @package {%= title %}
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,10 +26,16 @@
 		<nav id="site-navigation" class="main-navigation top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 		    <li class="name">
-		      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		      <?php
+		      	if ( is_front_page() || is_home() ) : ?>
+		      		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		      	<?php else : ?>
+		      		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		      	<?php endif;
+		      ?>
 		    </li>
 		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		    <li class="toggle-topbar menu-icon"><a href="#"><span><?php _e( 'Menu', '{%= prefix %}' ); ?></span></a></li>
 		  </ul><!-- .title-area -->
 
 		  <section class="top-bar-section">

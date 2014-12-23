@@ -8,8 +8,8 @@
 }
 
 .site-content {
+    word-wrap: break-word;
     @include grid-row;
-    @include wordwrap;
     .content-area {
         @extend .medium-8;
         @extend .columns;
@@ -17,6 +17,7 @@
     .site-sidebar {
         @extend .medium-4;
         @extend .columns;
+        @extend .hide-for-print;
     }
     .full-width {
         @extend .medium-12;

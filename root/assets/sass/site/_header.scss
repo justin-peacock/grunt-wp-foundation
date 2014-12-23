@@ -2,6 +2,9 @@
    Header
    ========================================================================== */
 .site-header {
+    .name .site-title a {
+        width: auto;
+    }
     .admin-bar &.fixed {
         top: 32px;
         @media screen and (max-width: 782px) {

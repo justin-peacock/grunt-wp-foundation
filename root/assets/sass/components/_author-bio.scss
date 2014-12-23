@@ -1,0 +1,53 @@
+/*
+   Autho Bio
+   ========================================================================== */
+.author-info {
+    border-top: 1px solid $secondary-color;
+    margin: rem-calc(0 30);
+    padding: 30px 0;
+    .avatar {
+        float: left;
+        @include size(36px);
+        margin: rem-calc(0 30 30 0);
+        border-radius: $global-rounded;
+    }
+}
+
+.author-heading {
+    margin-bottom: rem-calc(30);
+    font-size: rem-calc(18);
+    text-transform: uppercase;
+}
+
+.author-title {
+    clear: none;
+}
+
+.author-bio {
+    overflow: hidden;
+    padding-bottom: 1px;
+}
+
+.author-description {
+    hyphens: auto;
+    word-wrap: break-word;
+    a {
+        border-bottom: 1px solid $anchor-font-color;
+        &:hover, &:focus {
+            border-bottom: 0;
+        }
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.author-link {
+    white-space: nowrap;
+    &:after {
+        @include fontawesome;
+        content: "\f061";
+        position: relative;
+        top: 1px;
+    }
+}
