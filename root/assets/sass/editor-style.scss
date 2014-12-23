@@ -3,6 +3,8 @@ Theme Name: {%= title %}
 Description: Used to style the TinyMCE editor.
 */
 
+$editor-width: 637px;
+
 // Overwriting variables
 @import "variables/variables";
 
@@ -10,8 +12,21 @@ Description: Used to style the TinyMCE editor.
 // http://bourbon.io/docs/
 @import "bourbon";
 
-@import "components/alignments";
-@import "components/media";
+body {
+    max-width: $editor-width;
+    color: $body-font-color;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-style: $body-font-style;
+    line-height: $base-line-height;
+}
+
+img {
+    border: 0;
+    height: auto;
+    max-width: $editor-width;
+    vertical-align: middle;
+}
 
 /* Default Link Styles */
 a {
@@ -23,6 +38,7 @@ a {
         color: $anchor-font-color-hover;
     }
     img {
+        display: block;
         border: none;
     }
 }
@@ -184,3 +200,6 @@ blockquote p {
     line-height: $paragraph-line-height;
     color: $blockquote-font-color;
 }
+
+@import "components/alignments";
+@import "components/media";

@@ -4,7 +4,7 @@
     margin: $mt auto $mb;
 }
 
-@mixin fontawesome {
+%fontawesome {
     display: inline-block;
     font-family: "FontAwesome";
     -webkit-font-smoothing: antialiased;

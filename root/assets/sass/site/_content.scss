@@ -25,6 +25,42 @@
         @include clearfix;
         margin: rem-calc(30 0 0);
     }
+    .posted-on {
+        margin-right: 1rem;
+        &:before {
+            @extend %fontawesome;
+            content: "\f073";
+            margin-right: 5px;
+            position: relative;
+        }
+    }
+    .byline {
+        margin-right: 1rem;
+        &:before {
+            @extend %fontawesome;
+            content: "\f007";
+            margin-right: 5px;
+            position: relative;
+        }
+    }
+    .cat-links {
+        margin-right: 1rem;
+        &:before {
+            @extend %fontawesome;
+            content: "\f07c";
+            margin-right: 5px;
+            position: relative;
+        }
+    }
+    .tag-links {
+        margin-right: 1rem;
+        &:before {
+            @extend %fontawesome;
+            content: "\f02b";
+            margin-right: 5px;
+            position: relative;
+        }
+    }
     .comments-link {
         float: right;
     }
