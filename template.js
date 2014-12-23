@@ -58,7 +58,7 @@ exports.template = function( grunt, init, done ) {
 			"grunt-version-check": "^0.2.1",
 			"grunt-wp-assets": "~0.2.6",
 			"grunt-wp-i18n": "^0.4.9",
-			"load-grunt-tasks": "^1.0.0",
+			"load-grunt-tasks": "^2.0.0",
 			"node-sass": "^1.2.1",
 			"time-grunt": "^1.0.0",
 			"versioncheck": "^2.1.1"
