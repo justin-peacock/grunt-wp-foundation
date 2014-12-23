@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     // Foundation Core
     "bower_components/foundation/js/foundation/foundation.js",
-    "bower_components/foundation/js/foundation/foundation.abide.js",
+    // "bower_components/foundation/js/foundation/foundation.abide.js",
     "bower_components/foundation/js/foundation/foundation.accordion.js",
     "bower_components/foundation/js/foundation/foundation.alert.js",
     "bower_components/foundation/js/foundation/foundation.clearing.js",
@@ -194,12 +194,12 @@ module.exports = function(grunt) {
           length: 32,
           manifest: 'assets/manifest.json',
           querystring: {
-            style: '{%= prefix %}_css',
-            script: '{%= prefix %}_js'
+            style: '{%= prefix %}-css',
+            script: '{%= prefix %}-js'
           }
         },
         files: {
-          'inc/scripts.php': 'assets/{css,js}/{main,scripts}.min.{css,js}'
+          'inc/scripts.php': 'assets/{css,js}/{main,font-awesome,main-rtl,scripts}.min.{css,js}'
         }
       }
     },

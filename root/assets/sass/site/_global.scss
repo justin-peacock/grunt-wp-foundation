@@ -8,8 +8,8 @@
 }
 
 .site-content {
+    word-wrap: break-word;
     @include grid-row;
-    @include wordwrap;
     .content-area {
         @extend .medium-8;
         @extend .columns;

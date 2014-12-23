@@ -11,11 +11,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin wordwrap {
-    hyphens: auto;
-    word-wrap: break-word;
-}
-
 @mixin vertical-align {
     position: relative;
     top: 50%;
