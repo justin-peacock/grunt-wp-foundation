@@ -45,7 +45,7 @@
 .author-link {
     white-space: nowrap;
     &:after {
-        @include fontawesome;
+        @extend %fontawesome;
         content: "\f061";
         position: relative;
         top: 1px;
