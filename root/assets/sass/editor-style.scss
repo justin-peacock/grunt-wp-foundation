@@ -10,8 +10,13 @@ Description: Used to style the TinyMCE editor.
 // http://bourbon.io/docs/
 @import "bourbon";
 
-@import "components/alignments";
-@import "components/media";
+body {
+    color: $body-font-color;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    max-width: 637px;
+    vertical-align: baseline;
+}
 
 /* Default Link Styles */
 a {
@@ -184,3 +189,6 @@ blockquote p {
     line-height: $paragraph-line-height;
     color: $blockquote-font-color;
 }
+
+@import "components/alignments";
+@import "components/media";
